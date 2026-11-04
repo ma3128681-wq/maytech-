@@ -1,729 +1,413 @@
+
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta name="theme-color" content="#07111f">
-
 <meta name="description" content="MAYTECH SOLUTIONS provides professional TV and gaming console repairs and sales in Oshodi, Lagos.">
-
 <title>MAYTECH SOLUTIONS | TV & Gaming Repairs</title>
 
 <style>
-
 :root {
-
   --bg:#07111f;
-
   --panel:#101f32;
-
   --cyan:#00d9ff;
-
   --white:#f4f8ff;
-
   --muted:#a9b8ca;
-
 }
-
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-
 body{font-family:Arial,sans-serif;background:var(--bg);color:var(--white);line-height:1.6}
-
 a{color:inherit;text-decoration:none}
-
 header{position:sticky;top:0;z-index:100;background:rgba(7,17,31,.97);border-bottom:1px solid rgba(0,217,255,.2);padding:18px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-
 .logo{font-size:21px;font-weight:900;color:var(--cyan);letter-spacing:1px}
-
 nav{display:flex;gap:20px;flex-wrap:wrap}
-
 nav a{font-size:14px;color:var(--muted)}
-
 nav a:hover{color:var(--cyan)}
-
 .hero{min-height:570px;display:flex;align-items:center;padding:80px 8%;background:linear-gradient(90deg,rgba(7,17,31,.97),rgba(7,17,31,.65)),url("https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1600&q=85") center/cover}
-
 .hero-content{max-width:680px}
-
 .tag{color:var(--cyan);font-weight:bold;letter-spacing:3px;font-size:13px}
-
 h1{font-size:clamp(38px,7vw,68px);line-height:1.1;margin:18px 0}
-
 h1 span,.section-title span{color:var(--cyan)}
-
 .hero p{color:var(--muted);font-size:17px;max-width:560px;margin-bottom:28px}
-
 .btn{display:inline-block;background:var(--cyan);color:#04111c;padding:14px 24px;border-radius:7px;font-weight:bold;margin:5px 8px 5px 0;border:0;cursor:pointer}
-
 .btn-outline{background:transparent;border:1px solid var(--cyan);color:var(--cyan)}
-
 section{padding:75px 7%}
-
 .section-title{text-align:center;margin-bottom:40px}
-
 .section-title h2{font-size:34px;margin-bottom:10px}
-
 .section-title p{color:var(--muted)}
-
 .brand-strip{overflow:hidden;background:#091a30;border-top:1px solid #123e60;border-bottom:1px solid #123e60;padding:18px 0}
-
 .brand-track{display:flex;width:max-content;animation:brandScroll 25s linear infinite}
-
 .brand-track span{font-size:22px;font-weight:900;letter-spacing:1px;padding:0 35px;color:#eaf6ff;border-right:1px solid #24415b;white-space:nowrap}
-
 .brand-track span:nth-child(3n){color:var(--cyan)}
-
 @keyframes brandScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
 .services-grid,.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
-
 .service-card,.product-card{background:var(--panel);border:1px solid rgba(0,217,255,.15);border-radius:13px;overflow:hidden;transition:.3s}
-
 .service-card:hover,.product-card:hover{transform:translateY(-6px);border-color:var(--cyan)}
-
 .service-card img,.product-card img{width:100%;height:190px;object-fit:cover;display:block}
-
 .service-card.no-image{padding-top:25px}
-
 .card-content{padding:23px}
-
 .card-content h3{color:var(--cyan);margin-bottom:10px;font-size:19px}
-
 .card-content p{color:var(--muted);font-size:14px}
-
 .about{background:#0b192a;text-align:center}
-
 .about-content{max-width:850px;margin:auto}
-
 .about-content p{color:var(--muted);margin:15px 0}
-
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-
 .contact-card{background:var(--panel);padding:25px;border-radius:12px;border:1px solid rgba(0,217,255,.15)}
-
 .contact-card h3{color:var(--cyan);margin-bottom:10px}
-
 .contact-card p{color:var(--muted);overflow-wrap:anywhere}
-
 .map-frame{width:100%;height:350px;border:0;border-radius:12px;margin-top:30px}
-
-/* Booking form */
-
 .booking-section{background:#081526}
-
 .booking-wrap{max-width:760px;margin:auto;background:#0b1728;border:1px solid rgba(0,217,255,.35);border-radius:18px;padding:30px;box-shadow:0 0 30px rgba(0,217,255,.08)}
-
 .booking-wrap h2{text-align:center;font-size:30px;margin-bottom:8px}
-
 .booking-wrap .intro{text-align:center;color:var(--muted);margin-bottom:25px}
-
 .form-group{margin-bottom:19px}
-
 .form-group label{display:block;color:#c4d0df;font-size:14px;letter-spacing:1px;margin-bottom:8px}
-
 .form-group input,.form-group select,.form-group textarea{width:100%;padding:15px;background:#07111f;border:1px solid #26364b;border-radius:12px;color:white;font-size:16px;outline:none}
-
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--cyan)}
-
 .form-group textarea{min-height:125px;resize:vertical}
-
 .form-group input::placeholder,.form-group textarea::placeholder{color:#788698}
-
 .location-row{display:flex;gap:10px;align-items:center}
-
 .location-row input{flex:1;min-width:0}
-
 .location-btn{background:transparent;border:0;color:#ffb323;font-size:14px;font-weight:bold;cursor:pointer;white-space:nowrap}
-
 .photo-box{border:1px dashed #31516d;padding:22px;border-radius:12px;text-align:center;background:#07111f}
-
 .photo-box input{font-size:13px;max-width:100%;color:var(--muted)}
-
 .photo-box p{color:var(--muted);font-size:13px;margin-top:8px}
-
 .photo-count{color:var(--cyan);font-size:13px;margin-top:8px}
-
 .booking-submit{width:100%;padding:17px;border:0;border-radius:30px;background:#20c969;color:#fff;font-size:17px;font-weight:bold;cursor:pointer}
-
 .booking-submit:hover{background:#17ad56}
-
 .form-note{font-size:12px;color:var(--muted);margin-top:12px;text-align:center}
-
 footer{text-align:center;padding:30px 15px;background:#040b14;color:var(--muted);font-size:14px}
-
 .whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:200;background:#25d366;color:white;padding:14px 20px;border-radius:40px;font-weight:bold;box-shadow:0 5px 20px #0008}
-
 @media(max-width:600px){
-
  header{justify-content:center}
-
  nav{justify-content:center;gap:13px}
-
  .hero{min-height:500px;padding:65px 7%}
-
  section{padding:60px 6%}
-
  .booking-wrap{padding:20px 15px}
-
  .location-row{align-items:stretch;flex-direction:column}
-
  .location-btn{text-align:left;padding:5px 0}
-
  .brand-track span{font-size:18px;padding:0 24px}
-
 }
-
 </style>
-
 </head>
 
 <body>
-
 <header>
-
 <a href="#home" class="logo">MAYTECH SOLUTIONS</a>
-
 <nav>
-
 <a href="#home">Home</a>
-
 <a href="#services">Repairs</a>
-
 <a href="#products">Products</a>
-
 <a href="#about">About</a>
-
 <a href="#contact">Contact</a>
-
 <a href="#booking">Book Now</a>
-
 </nav>
-
 </header>
 
 <main>
-
 <section class="hero" id="home">
-
 <div class="hero-content">
-
 <div class="tag">YOUR TECH, OUR PRIORITY</div>
-
 <h1>Professional TV & Gaming <span>Solutions.</span></h1>
-
 <p>Expert television and gaming console repairs, screen replacement, diagnostics and quality products. Reliable service you can trust.</p>
-
 <a class="btn" href="#booking">Book a Repair</a>
-
 <a class="btn btn-outline" href="#products">Explore Products</a>
-
 </div>
-
 </section>
 
 <div class="brand-strip">
-
 <div class="brand-track">
-
 <span>SAMSUNG</span><span>LG</span><span>SONY</span><span>HISENSE</span><span>TCL</span><span>PHILIPS</span><span>PANASONIC</span>
-
 <span>SAMSUNG</span><span>LG</span><span>SONY</span><span>HISENSE</span><span>TCL</span><span>PHILIPS</span><span>PANASONIC</span>
-
 </div>
-
 </div>
 
 <section id="services">
-
 <div class="section-title">
-
 <h2>Our Repair <span>Services</span></h2>
-
 <p>Professional care for your television and gaming devices.</p>
-
 </div>
-
 <div class="services-grid">
-
 <article class="service-card">
-
 <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=900&q=85" alt="Smart television">
-
 <div class="card-content">
-
 <h3>Smart TV Repairs</h3>
-
 <p>Professional repairs for Smart TVs, LED, OLED and QLED televisions.</p>
-
 </div>
-
 </article>
 
 <article class="service-card no-image">
-
 <div class="card-content">
-
 <h3>Screen Repair & Replacement</h3>
-
 <p>Screen diagnosis, repair and replacement for supported television models.</p>
-
 </div>
-
 </article>
 
 <article class="service-card no-image">
-
 <div class="card-content">
-
 <h3>PlayStation Repairs</h3>
-
 <p>Reliable PS4 and PS5 troubleshooting, servicing and repairs.</p>
-
 </div>
-
 </article>
 
 <article class="service-card no-image">
-
 <div class="card-content">
-
 <h3>Xbox & Gaming Repairs</h3>
-
 <p>Professional gaming console diagnosis and repair services.</p>
-
 </div>
-
 </article>
 
 <article class="service-card no-image">
-
 <div class="card-content">
-
 <h3>Power & Display Faults</h3>
-
 <p>Solutions for power problems, blank screens and picture display faults.</p>
-
 </div>
-
 </article>
 
 <article class="service-card">
-
 <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=85" alt="Technical diagnostics">
-
 <div class="card-content">
-
 <h3>Diagnostics & Maintenance</h3>
-
 <p>Device inspection, fault detection and preventive maintenance.</p>
-
 </div>
-
 </article>
-
 </div>
-
 </section>
 
 <section id="products">
-
 <div class="section-title">
-
 <h2>Our <span>Products</span></h2>
-
 <p>Explore our television and gaming console products.</p>
-
 </div>
-
 <div class="products-grid">
-
 <article class="product-card">
-
 <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=900&q=85" alt="Television">
-
 <div class="card-content">
-
 <h3>Televisions</h3>
-
 <p>Explore quality television options for your home and entertainment.</p>
-
 <a class="btn" href="https://wa.me/2349030087669?text=Hello%20MAYTECH%20SOLUTIONS%2C%20I%20want%20to%20enquire%20about%20televisions.">Enquire Now</a>
-
 </div>
-
 </article>
 
 <article class="product-card">
-
 <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=900&q=85" alt="Gaming console">
-
 <div class="card-content">
-
 <h3>Gaming Consoles</h3>
-
 <p>Discover gaming consoles for your entertainment and gaming needs.</p>
-
 <a class="btn" href="https://wa.me/2349030087669?text=Hello%20MAYTECH%20SOLUTIONS%2C%20I%20want%20to%20enquire%20about%20gaming%20consoles.">Enquire Now</a>
-
 </div>
-
 </article>
-
 </div>
-
 </section>
 
 <section class="about" id="about">
-
 <div class="about-content">
-
 <div class="section-title">
-
 <h2>About <span>MAYTECH SOLUTIONS</span></h2>
-
 </div>
-
 <p>MAYTECH SOLUTIONS is committed to providing dependable television and gaming console repair services.</p>
-
 <p>From screen replacement and display faults to console repairs and maintenance, our priority is quality service and customer satisfaction.</p>
-
 <p><strong>YOUR TECH, OUR PRIORITY.</strong></p>
-
 </div>
-
 </section>
 
 <section class="booking-section" id="booking">
-
 <div class="booking-wrap">
-
 <h2>Book a <span>Repair</span></h2>
-
 <p class="intro">Fill in your details and send your booking directly to WhatsApp.</p>
 
 <form id="bookingForm">
-
 <div class="form-group">
-
 <label for="customerName">YOUR NAME *</label>
-
 <input id="customerName" type="text" placeholder="e.g. Chinedu O." required>
-
 </div>
 
 <div class="form-group">
-
 <label for="customerPhone">PHONE NUMBER *</label>
-
 <input id="customerPhone" type="tel" placeholder="0803 000 0000" required>
-
 </div>
 
 <div class="form-group">
-
 <label for="device">DEVICE *</label>
-
 <select id="device" required>
-
 <option value="">Select your device</option>
-
 <option>Smart TV</option>
-
 <option>LED TV</option>
-
 <option>OLED TV</option>
-
 <option>QLED TV</option>
-
 <option>PlayStation 4</option>
-
 <option>PlayStation 5</option>
-
 <option>Xbox</option>
-
 <option>Other gaming console</option>
-
 </select>
-
 </div>
 
 <div class="form-group">
-
 <label for="model">BRAND & MODEL (OPTIONAL)</label>
-
 <input id="model" type="text" placeholder="e.g. Samsung UA55 55-inch LED">
-
 </div>
 
 <div class="form-group">
-
 <label for="location">YOUR LOCATION *</label>
-
 <div class="location-row">
-
 <input id="location" type="text" placeholder="Area, landmark or full address" required>
-
 <button class="location-btn" type="button" id="locationBtn">📍 Use My Location</button>
-
 </div>
-
 <p id="locationStatus" class="form-note"></p>
-
 </div>
 
 <div class="form-group">
-
 <label for="issue">DESCRIBE THE ISSUE *</label>
-
 <textarea id="issue" maxlength="1000" placeholder="e.g. Screen turns on but no picture, just sound. Started after a power surge." required></textarea>
-
 </div>
 
 <div class="form-group">
-
 <label for="bookingDate">PREFERRED BOOKING DATE (OPTIONAL)</label>
-
 <input id="bookingDate" type="date">
-
 </div>
 
 <div class="form-group">
-
 <label for="bookingTime">PREFERRED TIME (OPTIONAL)</label>
-
 <select id="bookingTime">
-
 <option value="">Choose a preferred time</option>
-
 <option>9:00 AM – 11:00 AM</option>
-
 <option>11:00 AM – 1:00 PM</option>
-
 <option>1:00 PM – 3:00 PM</option>
-
 <option>3:00 PM – 5:00 PM</option>
-
 </select>
-
 </div>
 
 <div class="form-group">
-
 <label for="photos">PHOTOS OF YOUR DEVICE (OPTIONAL)</label>
-
 <div class="photo-box">
-
 <input id="photos" type="file" accept="image/*" multiple>
-
 <p>Choose up to 6 photos, maximum 8MB each.</p>
-
 <p class="photo-count" id="photoCount">No photos selected</p>
-
 </div>
-
 </div>
 
 <button type="submit" class="booking-submit">Send Booking to WhatsApp →</button>
-
 <p class="form-note">Your WhatsApp will open with your booking details ready to send. You can attach your selected photos in the chat.</p>
-
 </form>
-
 </div>
-
 </section>
 
 <section id="contact">
-
 <div class="section-title">
-
 <h2>Contact <span>Us</span></h2>
-
 <p>Let's help you get your devices working perfectly.</p>
-
 </div>
 
 <div class="contact-grid">
-
 <div class="contact-card">
-
 <h3>Our Address</h3>
-
 <p>Army Arena Shopping Complex,<br>Shop EU 14/03, Bolade,<br>Oshodi, Lagos State, Nigeria.</p>
-
 </div>
 
 <div class="contact-card">
-
 <h3>Call / WhatsApp</h3>
-
 <p>0903 008 7669</p>
-
 <a class="btn" href="https://wa.me/2349030087669">Chat on WhatsApp</a>
-
 </div>
 
 <div class="contact-card">
-
 <h3>Working Hours</h3>
-
 <p>9:00 AM – 5:00 PM</p>
-
 <p>Home service available on request.</p>
-
 </div>
-
 </div>
 
 <iframe class="map-frame"
-
 src="https://maps.google.com/maps?q=Army%20Arena%20Shopping%20Complex%2C%20Bolade%2C%20Oshodi%2C%20Lagos&t=&z=16&ie=UTF8&iwloc=&output=embed"
-
 allowfullscreen loading="lazy"
-
 referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 <p style="text-align:center;margin-top:18px">
-
 <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Army+Arena+Shopping+Complex+Bolade+Oshodi+Lagos" target="_blank" rel="noopener">Get Directions</a>
-
 </p>
-
 </section>
-
 </main>
 
 <footer>
-
 <p>© 2026 MAYTECH SOLUTIONS. All Rights Reserved.</p>
-
 <p>YOUR TECH, OUR PRIORITY</p>
-
 </footer>
 
 <a class="whatsapp-float" href="https://wa.me/2349030087669" target="_blank" rel="noopener">WhatsApp</a>
 
 <script>
-
 const locationBtn = document.getElementById("locationBtn");
 
 locationBtn.addEventListener("click", function () {
-
   const status = document.getElementById("locationStatus");
-
   const locationField = document.getElementById("location");
 
   if (!navigator.geolocation) {
-
     status.textContent = "Location is not supported by this browser. Please type your address.";
-
     return;
-
   }
 
   status.textContent = "Getting your location...";
 
   navigator.geolocation.getCurrentPosition(
-
     function (position) {
-
       const lat = position.coords.latitude;
-
       const lon = position.coords.longitude;
-
       locationField.value = "https://www.google.com/maps?q=" + lat + "," + lon;
-
       status.textContent = "Location added successfully.";
-
     },
-
     function () {
-
       status.textContent = "Could not access location. Please type your area or address.";
-
     },
-
     { enableHighAccuracy: true, timeout: 15000 }
-
   );
-
 });
 
 const photoInput = document.getElementById("photos");
 
 photoInput.addEventListener("change", function () {
-
   const files = Array.from(photoInput.files);
-
   const count = document.getElementById("photoCount");
 
   if (files.length > 6) {
-
     alert("Please select no more than 6 photos.");
-
     photoInput.value = "";
-
     count.textContent = "No photos selected";
-
     return;
-
   }
 
   const tooLarge = files.some(file => file.size > 8 * 1024 * 1024);
 
   if (tooLarge) {
-
     alert("Each photo must be 8MB or smaller.");
-
     photoInput.value = "";
-
     count.textContent = "No photos selected";
-
     return;
-
   }
 
   count.textContent = files.length + " photo(s) selected";
-
 });
 
 document.getElementById("bookingForm").addEventListener("submit", function (event) {
-
   event.preventDefault();
 
   const name = document.getElementById("customerName").value.trim();
-
   const phone = document.getElementById("customerPhone").value.trim();
-
   const device = document.getElementById("device").value;
-
   const model = document.getElementById("model").value.trim() || "Not provided";
-
   const location = document.getElementById("location").value.trim();
-
   const issue = document.getElementById("issue").value.trim();
-
   const date = document.getElementById("bookingDate").value || "Not specified";
-
   const time = document.getElementById("bookingTime").value || "Not specified";
-
   const photos = photoInput.files.length;
 
   if (!name || !phone || !device || !location || !issue) {
-
     alert("Please complete all required fields.");
-
     return;
-
   }
 
   const message =
-
 `*NEW REPAIR BOOKING - MAYTECH SOLUTIONS*
 
 *Customer Name:* ${name}
@@ -749,13 +433,8 @@ Please contact me about this repair booking.
 YOUR TECH, OUR PRIORITY.`;
 
   const whatsappURL = "https://wa.me/2349030087669?text=" + encodeURIComponent(message);
-
   window.location.href = whatsappURL;
-
 });
-
 </script>
-
 </body>
-
 </html>
